@@ -47,7 +47,13 @@ namespace mora2
 
 
     }
-  
+    public class Players
+    {
+        string name;
+        List<string> placement = new List<string>();
+        List<string> Mills = new List<string>();
+        int numberofcows;
+    }
     public partial class MainWindow : Window
     {
         BitmapImage carBitmap =new BitmapImage(new Uri("pack://application:,,,/1200px-Morabaraba_board.svg.png"));
@@ -60,7 +66,9 @@ namespace mora2
             Ellipse[] positions = { a1, a4, a7, b2, b4, b6, c3, c4, c5, d1, d2, d3, d5, d6, d7, e3, e4, e5, f2, f4, f6, g1, g4, g7 };
             Gameboard gamingstart = new Gameboard();
             gamingstart.StartPrintboard(colourme, positions);
-           
+            Players firstplayer = new Players();
+            Players secondplayer = new Players();
+
         }
     }
 }
