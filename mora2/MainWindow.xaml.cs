@@ -127,7 +127,19 @@ namespace mora2
             }
         }
 
-        
+        void Fly(string cow, int position)
+        {
+            if (IsMoveValid(position) == true)
+            {
+                //I am a stub
+            }
+
+        }
+
+        bool IsMill()
+        {
+            //I am a stub
+        }
 
         void Shoot (string cow, int position)
         {
