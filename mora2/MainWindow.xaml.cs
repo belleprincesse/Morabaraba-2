@@ -47,6 +47,44 @@ namespace mora2
 
 
     }
+
+    public class Cow
+    {
+        public List<string> CowSelection { get; set; }
+        public string[] CowList { get; set; }
+
+        public Cow()
+        {
+            CowSelection = new List<string>(23);
+            CowList = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24"];
+        }
+
+        public void InitialPlacementOfCows()
+        {
+            while (/*Player1 or Player2 is engaged*/ )
+            {
+                int HowManyCowsHaveBeenPlaced = 0;
+
+                if (/*Player Selects A Position*/)
+                {
+                    if (HowManyCowsHaveBeenPlaced < 24)
+                    {
+                        CowSelection.Add(CowList.[HowManyCowsHaveBeenPlaced++]); //The cows that have been placed on the board are moved from CowList to CowSelection
+                        CowList.SetValue("x", HowManyCowsHaveBeenPlaced); //Sort of like tells that a certain cow is no longer available for selection
+                    }
+
+                }
+                if (/*Player attempts to place cow that's not available for placement*/)
+                {
+                    MessageBox.Show("The cow that you've chosen has already been used. Please choose another cow.");
+                }
+            }
+        }
+
+      
+
+
+    }
     public class Players
     {
         string name;
