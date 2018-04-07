@@ -60,7 +60,7 @@ namespace mora2
 
         public void InitialPlacementOfCows()
         {
-            while (/*Player1 or Player2 is engaged*/)
+            while (/*Player1 or Player2 is engaged*/ )
             {
                 int HowManyCowsHaveBeenPlaced = 0;
 
@@ -78,6 +78,20 @@ namespace mora2
                     MessageBox.Show("The cow that you've chosen has already been used. Please choose another cow.");
                 }
             }
+        }
+
+        int Position (string cow) //Position starting from 1 counted from top left corner of board to bottom right corner of board 
+        {
+            for (int counter = 0; CowList[counter] != cow; counter++)
+            {
+                if (CowList[counter] == cow) return CowList[counter].ElementAt(1);
+            }
+            return 0;
+        }
+
+        bool isMoveValid(string position)
+        {
+            // I am a stub!
         }
         
 
