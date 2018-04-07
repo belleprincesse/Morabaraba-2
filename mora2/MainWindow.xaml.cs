@@ -81,7 +81,20 @@ namespace mora2
             }
         }
 
-      
+        int Position(string cow) //Position starting from 1 counted from top left corner of board to bottom right corner of board 
+        {
+            for (int counter = 0; CowList[counter] != cow; counter++)
+            {
+                if (CowList[counter] == cow) return CowList[counter].ElementAt(1);
+            }
+            return 0;
+        }
+
+        bool isMoveValid(string position)
+        {
+            // I am a stub!
+            return false;
+        }
 
 
     }
