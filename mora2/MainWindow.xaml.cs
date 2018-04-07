@@ -119,7 +119,15 @@ namespace mora2
             return false;
         }
 
-       
+        void Move(string cow, int position)
+        {
+            if (IsMoveValid(position) == true)
+            {
+                //I am a stub
+            }
+        }
+
+        
 
         void Shoot (string cow, int position)
         {
