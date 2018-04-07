@@ -52,6 +52,7 @@ namespace mora2
     {
         public List<string> CowSelection { get; set; }
         public string[] CowList { get; set; }
+        public List<string> DeadCows { get; private set; }
 
         public Cow()
         {
@@ -67,35 +68,48 @@ namespace mora2
 
                 if (/*Player Selects A Position*/)
                 {
-                    if (HowManyCowsHaveBeenPlaced < 24)
+                    if (HowManyCowsHaveBeenPlaced < CowSelection.Count+1)
                     {
-                        CowSelection.Add(CowList.[HowManyCowsHaveBeenPlaced++]); //The cows that have been placed on the board are moved from CowList to CowSelection
+                        CowSelection.Add(CowList[HowManyCowsHaveBeenPlaced++]); //The cows that have been placed on the board are moved from CowList to CowSelection
                         CowList.SetValue("x", HowManyCowsHaveBeenPlaced); //Sort of like tells that a certain cow is no longer available for selection
                     }
 
+                    if (/*Player attempts to place cow that's not available for placement*/)
+                    {
+                        MessageBox.Show("The cow that you've chosen has already been used. Please choose another cow.");
+                    }
                 }
-                if (/*Player attempts to place cow that's not available for placement*/)
-                {
-                    MessageBox.Show("The cow that you've chosen has already been used. Please choose another cow.");
-                }
+                
             }
         }
 
         int Position(string cow) //Position starting from 1 counted from top left corner of board to bottom right corner of board 
         {
-            for (int counter = 0; CowList[counter] != cow; counter++)
+            for (int counter = 0; CowSelection[counter] != cow; counter++)
             {
-                if (CowList[counter] == cow) return CowList[counter].ElementAt(1);
+                if (CowSelection[counter] == cow) return CowSelection[counter].ElementAt(1);
             }
             return 0;
         }
 
-        bool isMoveValid(int position)
+        bool IsCowAlive(string cow)
+        {
+            for (int counter = 0; counter < CowSelection.Count+1; counter++)
+            {
+                if (CowSelection[counter] == cow)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        bool IsMoveValid(int position)
         {
             int counter = 0;
-            while (position != Position(CowList[counter]) && counter < 24)
+            while (position != Position(CowSelection[counter]) && counter < CowSelection.Count+1)
             {
-                if (position == Position(CowList[counter]))
+                if (position == Position(CowSelection[counter]))
                 {
                     return true;
                 }
@@ -103,6 +117,21 @@ namespace mora2
             }
            
             return false;
+        }
+
+       
+
+        void Shoot (string cow, int position)
+        {
+            if (IsCowAlive(cow) == true)
+            {
+                CowSelection.Remove(cow);
+                DeadCows.Add(cow);
+            }
+            else
+            {
+                MessageBox.Show("The selected cow cannot be executed. Please choose a different cow to kill.");
+            }
         }
 
 
