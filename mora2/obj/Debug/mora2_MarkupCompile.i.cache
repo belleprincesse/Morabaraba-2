@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\mambu\Desktop\Computer Sciences\Git Repos\Morabaraba in C#\mora2\obj\Debug\
+=======
+C:\Users\mambu\Desktop\Git Repos\Morabaraba in C#\Morabaraba-2\mora2\obj\Debug\
+>>>>>>> e4dc5c89c17f7513c1803523838a7327d1bea362
 mora2
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\mambu\Desktop\Computer Sciences\Git Repos\Morabaraba in C#\mora2\App.xaml
+=======
+C:\Users\mambu\Desktop\Git Repos\Morabaraba in C#\Morabaraba-2\mora2\App.xaml
+>>>>>>> e4dc5c89c17f7513c1803523838a7327d1bea362
 11151548125
 
 9-705296898
