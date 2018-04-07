@@ -90,9 +90,18 @@ namespace mora2
             return 0;
         }
 
-        bool isMoveValid(string position)
+        bool isMoveValid(int position)
         {
-            // I am a stub!
+            int counter = 0;
+            while (position != Position(CowList[counter]) && counter < 24)
+            {
+                if (position == Position(CowList[counter]))
+                {
+                    return true;
+                }
+                counter++;
+            }
+           
             return false;
         }
 
