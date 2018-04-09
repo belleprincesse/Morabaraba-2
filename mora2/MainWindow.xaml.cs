@@ -124,5 +124,12 @@ namespace mora2
             gamingstart.StartPrintboard(colourme, positions);
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string positionis = Convert.ToString(t1.Text);
+            Gameboard gameinitalise = new Gameboard(colourpositions);
+            
+        }
     }
 }
