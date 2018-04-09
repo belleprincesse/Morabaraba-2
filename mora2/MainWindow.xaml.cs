@@ -22,13 +22,15 @@ namespace mora2
     /// 
     public class Gameboard
     {
-        public List<string> positions { get; private set; }  //property value associated with an instance
-       
-        public Gameboard()                                 //constructor create instances of the classes
+        public string[] stringpositions;  //property value associated with an instance
+        public Brush[] colourpositions { get; private set; }
+        public Gameboard(Brush[] colourpositions)                                 //constructor create instances of the classes
         {
-            positions = new List<string>();
-        }
+            stringpositions = new string[] { "A1", "D1", "G1", "B2", "D2", "F2", "C3", "D3", "E3", "A4", "B4", "C4", "E4", "F4", "G4", "C5", "D5", "E5", "B6", "D6", "F6", "A7", "D7", "G7" };
+            this.colourpositions = colourpositions;
 
+
+        }
 
         List<string> update(List<string> places)
         {
