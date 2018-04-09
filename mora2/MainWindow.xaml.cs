@@ -32,6 +32,43 @@ namespace mora2
 
         }
 
+        public void placements(Brush whichplayer, string whereisthecow)
+        {
+            int index = -1;
+            for (int i = 0; i < stringpositions.Length + 1; i++)  //check valid position
+            {
+                if (stringpositions[i] == whereisthecow)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if (index != -1)
+            {
+                Brush whatcolour = colourpositions[index];
+                if (whatcolour == Brushes.Yellow)
+                {
+                    colourpositions[index] = whichplayer;
+                }
+                else if (whatcolour == whichplayer)
+                {
+                    MessageBox.Show("You already occupy that position. Please select another placement");
+                }
+                else
+                {
+                    MessageBox.Show("Your oppponent occupies that space. Please select another placement");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please re-enter a valid position");
+            }
+
+
+
+        }
+
         List<string> update(List<string> places)
         {
             List<string> positions = new List<string>();
@@ -129,7 +166,7 @@ namespace mora2
         {
             string positionis = Convert.ToString(t1.Text);
             Gameboard gameinitalise = new Gameboard(colourpositions);
-            
+            gameinitalise.placements(Brushes.Blue, positionis);
         }
     }
 }
