@@ -47,127 +47,53 @@ namespace mora2
 
 
     }
-
     public class Cow
     {
         public List<string> CowSelection { get; set; }
         public string[] CowList { get; set; }
-        public List<string> DeadCows { get; private set; }
-        public List<string> Player1Cows { get; private set; }
-        public List<string> Player2Cows { get; private set; }
 
         public Cow()
         {
             CowSelection = new List<string>(23);
-            CowList = { "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24"};
-            Player1Cows = new List<string>(11);
-            Player2Cows = new List<string>(11);
+            CowList = ["C1","C2","C3","C4","C5","C6","C7","C8","C9","C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24"];
         }
 
         public void InitialPlacementOfCows()
         {
-            while (/*Player1 or Player2 is active*/ )
+            while (/*Player1 or Player2 is engaged*/ )
             {
                 int HowManyCowsHaveBeenPlaced = 0;
 
-                if (/*Player1 or Player2 Selects A Position*/)
+                if (/*Player Selects A Position*/)
                 {
-                    if (HowManyCowsHaveBeenPlaced < CowSelection.Count+1 /*&& Player1 is currently active*/ )
+                    if (HowManyCowsHaveBeenPlaced < 24)
                     {
-                        Player1Cows.Add(CowList[HowManyCowsHaveBeenPlaced]);
-                        CowSelection.Add(CowList[HowManyCowsHaveBeenPlaced]); //The cows that have been placed on the board are moved from CowList to CowSelection
+                        CowSelection.Add(CowList.[HowManyCowsHaveBeenPlaced++]); //The cows that have been placed on the board are moved from CowList to CowSelection
                         CowList.SetValue("x", HowManyCowsHaveBeenPlaced); //Sort of like tells that a certain cow is no longer available for selection
-                        HowManyCowsHaveBeenPlaced++;
                     }
-                    else if (HowManyCowsHaveBeenPlaced < CowSelection.Count + 1 /*&& Player2 is currently active*/)
-                    {
-                        Player2Cows.Add(CowList[HowManyCowsHaveBeenPlaced]);
-                        CowSelection.Add(CowList[HowManyCowsHaveBeenPlaced]); //The cows that have been placed on the board are moved from CowList to CowSelection
-                        CowList.SetValue("x", HowManyCowsHaveBeenPlaced); //Sort of like tells that a certain cow is no longer available for selection
-                        HowManyCowsHaveBeenPlaced++;
-                    }
-
-                    if (/*Player attempts to place cow that's not available for placement*/)
-                    {
-                        MessageBox.Show("The cow that you've chosen has already been used. Please choose another cow.");
-                    }
+                    
                 }
-                
+                if (/*Player attempts to place cow that's not available for placement*/)
+                {
+                    MessageBox.Show("The cow that you've chosen has already been used. Please choose another cow.");
+                }
             }
         }
 
-        int Position(string cow) //Position starting from 1 counted from top left corner of board to bottom right corner of board 
+        int Position (string cow) //Position starting from 1 counted from top left corner of board to bottom right corner of board 
         {
-            for (int counter = 0; CowSelection[counter] != cow; counter++)
+            for (int counter = 0; CowList[counter] != cow; counter++)
             {
-                if (CowSelection[counter] == cow) return CowSelection[counter].ElementAt(1);
+                if (CowList[counter] == cow) return CowList[counter].ElementAt(1);
             }
             return 0;
         }
 
-        bool IsCowAlive(string cow)
+        bool isMoveValid(string position)
         {
-            for (int counter = 0; counter < CowSelection.Count+1; counter++)
-            {
-                if (CowSelection[counter] == cow)
-                {
-                    return true;
-                }
-            }
-            return false;
+            // I am a stub!
         }
-
-        bool IsMoveValid(int position)
-        {
-            int counter = 0;
-            while (position != Position(CowSelection[counter]) && counter < CowSelection.Count+1)
-            {
-                if (position == Position(CowSelection[counter]))
-                {
-                    return true;
-                }
-                counter++;
-            }
-           
-            return false;
-        }
-
-        void Move(string cow, int position)
-        {
-            if (IsMoveValid(position) == true)
-            {
-                //I am a stub
-            }
-        }
-
-        void Fly(string cow, int position)
-        {
-            if (IsMoveValid(position) == true)
-            {
-                //I am a stub
-            }
-
-        }
-
-        bool IsMill()
-        {
-            //I am a stub
-            
-        }
-
-        void Shoot (string cow, int position)
-        {
-            if (IsCowAlive(cow) == true)
-            {
-                CowSelection.Remove(cow);
-                DeadCows.Add(cow);
-            }
-            else
-            {
-                MessageBox.Show("The selected cow cannot be executed. Please choose a different cow to kill.");
-            }
-        }
-
+        
 
     }
     public class Players
