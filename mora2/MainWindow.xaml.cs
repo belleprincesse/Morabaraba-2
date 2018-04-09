@@ -68,13 +68,16 @@ namespace mora2
 
 
         }
-
-        List<string> update(List<string> places)
+        public void updateboardvisual(Ellipse[] places)   //print the changes onto the board
         {
-            List<string> positions = new List<string>();
-            return positions;
+            for (int i = 0; i < places.Length; i++)
+            {
+                places[i].Fill = colourpositions[i];
+
+            }
+
         }
-        
+
         public  void StartPrintboard(Brush[]colours, Ellipse[]places)
         {
             for (int i = 0; i < places.Length; i++)
@@ -167,6 +170,7 @@ namespace mora2
             string positionis = Convert.ToString(t1.Text);
             Gameboard gameinitalise = new Gameboard(colourpositions);
             gameinitalise.placements(Brushes.Blue, positionis);
+            gameinitalise.updateboardvisual(positions1);
         }
     }
 }
