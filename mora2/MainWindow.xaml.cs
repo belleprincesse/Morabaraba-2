@@ -108,17 +108,20 @@ namespace mora2
     public partial class MainWindow : Window
     {
         BitmapImage carBitmap =new BitmapImage(new Uri("pack://application:,,,/1200px-Morabaraba_board.svg.png"));
+        Brush[] colourme = { Brushes.Yellow, Brushes.Blue, Brushes.Green };
+        Brush[] colourpositions = { Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow };
+        Players firstplayer = new Players();
+        Players secondplayer = new Players();
+        Ellipse[] positions1;
 
         public MainWindow()
         {
             InitializeComponent();
             board.Source = carBitmap;
-            Brush [] colourme = { Brushes.Yellow, Brushes.Blue, Brushes.Green};
             Ellipse[] positions = { a1, a4, a7, b2, b4, b6, c3, c4, c5, d1, d2, d3, d5, d6, d7, e3, e4, e5, f2, f4, f6, g1, g4, g7 };
-            Gameboard gamingstart = new Gameboard();
+            positions1 = positions;
+            Gameboard gamingstart = new Gameboard(colourpositions);
             gamingstart.StartPrintboard(colourme, positions);
-            Players firstplayer = new Players();
-            Players secondplayer = new Players();
 
         }
     }
