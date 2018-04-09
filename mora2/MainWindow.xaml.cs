@@ -141,9 +141,18 @@ namespace mora2
     public class Players
     {
         string name;
-        List<string> placement = new List<string>();
-        List<string> Mills = new List<string>();
+        public List<string> placement { get; private set; }
+        public List<string> Mills { get; private set; }
         int numberofcows;
+        Brush colour;
+        public Players()                                 //constructor create instances of the classes
+        {
+            name = "";
+            placement = new List<string>();
+            Mills = new List<string>();
+            numberofcows = 0;
+            Brush colour = Brushes.Yellow;
+        }
     }
     public partial class MainWindow : Window
     {

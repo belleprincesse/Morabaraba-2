@@ -46,5 +46,7 @@
         <Ellipse x:Name="a7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="31" Margin="115,445,0,0" Stroke="Black" VerticalAlignment="Top" Width="34" RenderTransformOrigin="6.208,-2.566"/>
         <Ellipse x:Name="f6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="31" Margin="469,378,0,0" Stroke="Black" VerticalAlignment="Top" Width="34" RenderTransformOrigin="6.208,-2.566"/>
         <Ellipse x:Name="g7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="31" Margin="533,445,0,0" Stroke="Black" VerticalAlignment="Top" Width="34" RenderTransformOrigin="6.208,-2.566"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Height="29" Margin="609,233,0,0" VerticalAlignment="Top" Width="65" Click="Button_Click"/>
+        <TextBox x:Name="t1" HorizontalAlignment="Left" Height="36" Margin="609,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
     </Grid>
 </Window>
