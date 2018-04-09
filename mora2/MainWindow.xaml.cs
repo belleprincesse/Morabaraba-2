@@ -53,25 +53,38 @@ namespace mora2
         public List<string> CowSelection { get; set; }
         public string[] CowList { get; set; }
         public List<string> DeadCows { get; private set; }
+        public List<string> Player1Cows { get; private set; }
+        public List<string> Player2Cows { get; private set; }
 
         public Cow()
         {
             CowSelection = new List<string>(23);
-            CowList = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24"];
+            CowList = { "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24"};
+            Player1Cows = new List<string>(11);
+            Player2Cows = new List<string>(11);
         }
 
         public void InitialPlacementOfCows()
         {
-            while (/*Player1 or Player2 is engaged*/ )
+            while (/*Player1 or Player2 is active*/ )
             {
                 int HowManyCowsHaveBeenPlaced = 0;
 
-                if (/*Player Selects A Position*/)
+                if (/*Player1 or Player2 Selects A Position*/)
                 {
-                    if (HowManyCowsHaveBeenPlaced < CowSelection.Count+1)
+                    if (HowManyCowsHaveBeenPlaced < CowSelection.Count+1 /*&& Player1 is currently active*/ )
                     {
-                        CowSelection.Add(CowList[HowManyCowsHaveBeenPlaced++]); //The cows that have been placed on the board are moved from CowList to CowSelection
+                        Player1Cows.Add(CowList[HowManyCowsHaveBeenPlaced]);
+                        CowSelection.Add(CowList[HowManyCowsHaveBeenPlaced]); //The cows that have been placed on the board are moved from CowList to CowSelection
                         CowList.SetValue("x", HowManyCowsHaveBeenPlaced); //Sort of like tells that a certain cow is no longer available for selection
+                        HowManyCowsHaveBeenPlaced++;
+                    }
+                    else if (HowManyCowsHaveBeenPlaced < CowSelection.Count + 1 /*&& Player2 is currently active*/)
+                    {
+                        Player2Cows.Add(CowList[HowManyCowsHaveBeenPlaced]);
+                        CowSelection.Add(CowList[HowManyCowsHaveBeenPlaced]); //The cows that have been placed on the board are moved from CowList to CowSelection
+                        CowList.SetValue("x", HowManyCowsHaveBeenPlaced); //Sort of like tells that a certain cow is no longer available for selection
+                        HowManyCowsHaveBeenPlaced++;
                     }
 
                     if (/*Player attempts to place cow that's not available for placement*/)
@@ -139,6 +152,7 @@ namespace mora2
         bool IsMill()
         {
             //I am a stub
+            
         }
 
         void Shoot (string cow, int position)
