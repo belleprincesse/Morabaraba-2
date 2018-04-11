@@ -223,7 +223,7 @@ namespace mora2
     {
         string name;
         public List<string> placement { get; private set; }
-        public List<string> Mills { get; private set; }
+        public List<List<string>> Mills { get; private set; }
         public int numberofcows { get; private set; }
         Brush colour;
         public Players(string playername, Brush playercolour)                                 //constructor create instances of the classes
@@ -250,7 +250,11 @@ namespace mora2
         {
             numberofcows--;
         }
-        //method that stores the mills
+        
+        public void AddCowmills(List<string> onecowmill)
+        {
+            Mills.Add(onecowmill);
+        }
         //method that updates how many cows they have 
     }
     public partial class MainWindow : Window
