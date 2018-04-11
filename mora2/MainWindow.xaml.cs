@@ -226,13 +226,13 @@ namespace mora2
         public List<string> Mills { get; private set; }
         int numberofcows;
         Brush colour;
-        public Players()                                 //constructor create instances of the classes
+        public Players(string playername, Brush playercolour)                                 //constructor create instances of the classes
         {
-            name = "";
-            placement = new List<string>();
-            Mills = new List<string>();
+            name = playername;
+            this.placement = placement;
+            this.Mills = Mills;
             numberofcows = 0;
-            Brush colour = Brushes.Yellow;
+            Brush colour = playercolour;
         }
 
         public void addplacementtoplayer(string position)
@@ -248,8 +248,8 @@ namespace mora2
         BitmapImage carBitmap = new BitmapImage(new Uri("pack://application:,,,/1200px-Morabaraba_board.svg.png"));
         Brush[] colourme = { Brushes.Yellow, Brushes.Blue, Brushes.Green };
         Brush[] colourpositions = { Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow, Brushes.Yellow };
-        Players firstplayer = new Players();
-        Players secondplayer = new Players();
+        Players firstplayer = new Players("1", Brushes.Blue);
+        Players secondplayer = new Players("2", Brushes.Green);
         public int PCbuttoncounter = 0;
         Ellipse[] positions1;
         public MainWindow()
@@ -275,11 +275,13 @@ namespace mora2
             if (playerwhat == 1)
             {
                 gameinitalise.placements(colourme[1], positionis);
+                secondplayer.addplacementtoplayer(positionis);
                 player.Text = "2";
             }
             else if (playerwhat == 2)
             {
                 gameinitalise.placements(colourme[2], positionis);
+                firstplayer.addplacementtoplayer(positionis);
                 player.Text = "1";
             }
             else { MessageBox.Show("Only player 1 and 2 allowed"); }
