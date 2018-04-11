@@ -281,12 +281,14 @@ namespace mora2
             {
                 gameinitalise.placements(colourme[1], positionis);
                 firstplayer.addplacementtoplayer(positionis);
+                firstplayer.increasecows();
                 player.Text = "2";
             }
             else if (playerwhat == 2)
             {
                 gameinitalise.placements(colourme[2], positionis);
                 secondplayer.addplacementtoplayer(positionis);
+                secondplayer.increasecows();
                 player.Text = "1";
             }
             else { MessageBox.Show("Only player 1 and 2 allowed"); }
