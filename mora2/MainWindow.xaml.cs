@@ -224,14 +224,14 @@ namespace mora2
         string name;
         public List<string> placement { get; private set; }
         public List<string> Mills { get; private set; }
-        int numberofcows;
+        public int numberofcows { get; private set; }
         Brush colour;
         public Players(string playername, Brush playercolour)                                 //constructor create instances of the classes
         {
             name = playername;
             this.placement = placement;
             this.Mills = Mills;
-            numberofcows = 0;
+            this.numberofcows=numberofcows;
             Brush colour = playercolour;
         }
 
@@ -239,7 +239,12 @@ namespace mora2
         {
             placement.Add(position);
         }
-        //method that takes in the placement and add into placement list
+        
+        
+        public void increasecows()
+        {
+            numberofcows++;
+        }
         //method that stores the mills
         //method that updates how many cows they have 
     }
@@ -275,13 +280,13 @@ namespace mora2
             if (playerwhat == 1)
             {
                 gameinitalise.placements(colourme[1], positionis);
-                secondplayer.addplacementtoplayer(positionis);
+                firstplayer.addplacementtoplayer(positionis);
                 player.Text = "2";
             }
             else if (playerwhat == 2)
             {
                 gameinitalise.placements(colourme[2], positionis);
-                firstplayer.addplacementtoplayer(positionis);
+                secondplayer.addplacementtoplayer(positionis);
                 player.Text = "1";
             }
             else { MessageBox.Show("Only player 1 and 2 allowed"); }
