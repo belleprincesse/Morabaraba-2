@@ -234,6 +234,11 @@ namespace mora2
             numberofcows = 0;
             Brush colour = Brushes.Yellow;
         }
+
+        public void addplacementtoplayer(string position)
+        {
+            placement.Add(position);
+        }
         //method that takes in the placement and add into placement list
         //method that stores the mills
         //method that updates how many cows they have 
