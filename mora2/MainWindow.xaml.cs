@@ -245,6 +245,11 @@ namespace mora2
         {
             numberofcows++;
         }
+
+        public void decreasecows()
+        {
+            numberofcows--;
+        }
         //method that stores the mills
         //method that updates how many cows they have 
     }
