@@ -255,7 +255,12 @@ namespace mora2
         {
             Mills.Add(onecowmill);
         }
-        //method that updates how many cows they have 
+
+        public void MinusCowmills(List<string> onecowmill)
+        {
+            Mills.Remove(onecowmill);
+        }
+       
     }
     public partial class MainWindow : Window
     {
