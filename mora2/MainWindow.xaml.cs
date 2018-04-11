@@ -110,6 +110,187 @@ namespace mora2
 
     }
 
+    public class Cow
+    {
+        List<string> CowMills;
+
+        public Cow ()                                 
+        {
+            List<List<string>> CowMills = new List<List<string>>();
+
+        }
+
+        public void Millchecker(List<string> cowpositions)
+        {
+          
+            cowpositions.Sort();
+            for(int i = 0; i<cowpositions.Count; i++)
+            {
+              if(cowpositions[i]=="A1")
+                {
+                    if(cowpositions[i + 1] == "D1" && cowpositions[i + 2] == "G1")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "A1", "D1", "G1" });
+
+                    }else if(cowpositions[i + 1] == "A4" && cowpositions[i + 2] == "A7")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "A1", "A4", "A7" });
+                    }
+                    else if (cowpositions[i + 1] == "B2" && cowpositions[i + 2] == "C3")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "A1", "B2", "C3" });
+                    }
+
+                }
+                if (cowpositions[i] == "A4")
+                {
+                    if (cowpositions[i + 1] == "B4" && cowpositions[i + 2] == "C4")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "A4", "B4", "C4" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "A7")
+                {
+                    if (cowpositions[i + 1] == "D7" && cowpositions[i + 2] == "G7")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "A7", "D7", "G7" });
+
+                    }
+                    else if (cowpositions[i + 1] == "B6" && cowpositions[i + 2] == "C5")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "A7", "B6", "C5" });
+                    }
+
+                }
+                if (cowpositions[i] == "B2" )
+                {
+                    if (cowpositions[i + 1] == "D2" && cowpositions[i + 2] == "F2")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "B2", "D2", "F2" });
+
+                    }
+                    else if (cowpositions[i + 1] == "B4" && cowpositions[i + 2] == "B6")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "B2", "B4", "B6" });
+                    }
+
+                }
+                if (cowpositions[i] == "B6")
+                {
+                    if (cowpositions[i + 1] == "D6" && cowpositions[i + 2] == "F6")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "B6", "D6", "F6" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "C3")
+                {
+                    if (cowpositions[i + 1] == "D3" && cowpositions[i + 2] == "E3")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "C3", "D3", "E3" });
+
+                    }
+                    else if (cowpositions[i + 1] == "C4" && cowpositions[i + 2] == "C5")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "C3", "C4", "C5" });
+                    }
+
+                }
+                if (cowpositions[i] == "D1")
+                {
+                    if (cowpositions[i + 1] == "D2" && cowpositions[i + 2] == "D3")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "D1", "D2", "D3" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "D5")
+                {
+                    if (cowpositions[i + 1] == "D6" && cowpositions[i + 2] == "D7")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "D5", "D6", "D7" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "E3")
+                {
+                    if (cowpositions[i + 1] == "E4" && cowpositions[i + 2] == "E5")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "E3", "E4", "E5" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "E4")
+                {
+                    if (cowpositions[i + 1] == "F4" && cowpositions[i + 2] == "G4")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "E4", "F4", "G4" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "E5")
+                {
+                    if (cowpositions[i + 1] == "F6" && cowpositions[i + 2] == "G7")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "E5", "F6", "G7" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "F2")
+                {
+                    if (cowpositions[i + 1] == "F4" && cowpositions[i + 2] == "F6")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "F2", "F4", "F6" });
+
+                    }
+
+                }
+                if (cowpositions[i] == "G1")
+                {
+                    if (cowpositions[i + 1] == "G4" && cowpositions[i + 2] == "G7")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "G1", "G4", "G7" });
+
+                    }
+                    else if (cowpositions[i + 1] == "F2" && cowpositions[i + 2] == "E3")
+                    {
+                        List<List<string>> myList = new List<List<string>>();
+                        myList.Add(new List<string> { "G1", "F2", "E3" });
+                    }
+
+                }
+
+
+            }
+        }
+    }
+
     //public class Cow
     //{
     //    public List<string> CowSelection { get; set; }
